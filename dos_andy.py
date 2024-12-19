@@ -20,4 +20,4 @@ Limite_superior = np.pi
 # cuadrature retorna dos valores: el resultado y el error estimado.
 N_F, error = quadrature(jacobian, Limite_inferior, Limite_superior, args=(Hop_t, E_n, parametro_de_red))
 
-print(f"Nivel de Fermi: {N_F} (Error estimado e: {error})")
+print(f"nivel de Fermi: {N_F} (Error estimado e: {error})")
