@@ -16,7 +16,7 @@ def jacobian(x, Hop_t, En, parametro_de_red):
     v_x = -2*Hop_t*sin_kx
     v_z = -2*Hop_t*sin_kz
 
-    modulo_de_v_k = np.sqrt(v_x**2 + v_z**2)
+    modulo_de_v_k = np.sqrt(v_x*2 + v_z*2)
     dS_F = np.sqrt(1 + (v_z/v_x)**2)
 
     jacobiano = dS_F / modulo_de_v_k
@@ -39,9 +39,9 @@ def brecha_k(brecha_0, parametro_de_red, x, Hop_t, En):
 #! Terminos a calcular
 
 def termino_positivo(omega, alpha, brecha_k):
-    a_k = omega**2 - alpha**2 - brecha_k**2
+    a_k = omega*2 - alpha2 - brecha_k*2
     b_k = 2*omega*alpha
-    rho_k = np.sqrt(a_k**2 + b_k**2)
+    rho_k = np.sqrt(a_k*2 + b_k*2)
 
     factor_sin_raiz = omega / np.sqrt(2*rho_k)
     factor_con_raiz = np.sqrt(1 + a_k/rho_k)
@@ -51,9 +51,9 @@ def termino_positivo(omega, alpha, brecha_k):
     return argumento
 
 def termino_negativo(omega, alpha, brecha_k):
-    a_k = omega**2 - alpha**2 - brecha_k**2
+    a_k = omega*2 - alpha2 - brecha_k*2
     b_k = 2*omega*alpha
-    rho_k = np.sqrt(a_k**2 + b_k**2)
+    rho_k = np.sqrt(a_k*2 + b_k*2)
 
     factor_sin_raiz = omega / np.sqrt(2*rho_k)
     factor_con_raiz = np.sqrt(1 - a_k/rho_k)
@@ -61,4 +61,3 @@ def termino_negativo(omega, alpha, brecha_k):
     argumento = factor_sin_raiz * factor_con_raiz
 
     return argumento
-
